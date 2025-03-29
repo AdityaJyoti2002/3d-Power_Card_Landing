@@ -9,6 +9,7 @@ import Model2 from "../components/Scene2";
 import { useContext } from "react";
 import { ColorContext } from "./../context/ColorContext";
 import { useEffect } from "react";
+import Model from "../components/Scene";
 
 const Section = styled.section`
   width: 100vw;
@@ -167,6 +168,7 @@ const ColorSection = () => {
           <directionalLight intensity={0.4} />
           <Suspense fallback={null}>
             <Model2 />
+            {/* <Model/> */}
           </Suspense>
           {/* <OrbitControls /> */}
         </Canvas>

@@ -9,25 +9,33 @@ title: Apple iPhone 13 Pro Max
 import React, { useRef, useLayoutEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
+// import modexlPath from "../assets/3D-Model/scene.gltf";
 
 export default function Model2({ ...props }) {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/scene.gltf");
+  const { nodes, materials } = useGLTF("/scene1.gltf");
 
   let camera = useThree((state) => state.camera);
 
   useLayoutEffect(() => {
     camera.position.set(-0.1,0.4,5);
-    materials.Body.color.set("#9BB5CE");
+    // Check if materials.Body exists before accessing its color property
+    if (materials?.Body?.color) {
+      materials.DefaultMaterial.color.set("#9BB5CE");
+    }
         
-  }, [camera.position, materials.Body.color]);
+  }, [camera.position, materials]);
 
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <group scale={100}>
-            <mesh
+          <mesh
+  geometry={nodes.Power_Bank_DefaultMaterial_0.geometry}
+  material={materials.DefaultMaterial}
+/>
+            {/* <mesh
               geometry={nodes.Body_Mic_0.geometry}
               material={materials.material}
             />
@@ -142,7 +150,7 @@ export default function Model2({ ...props }) {
             <mesh
               geometry={nodes.Frame_Mic_0.geometry}
               material={materials.material}
-            />
+            /> */}
           </group>
         </group>
       </group>
@@ -150,4 +158,4 @@ export default function Model2({ ...props }) {
   );
 }
 
-useGLTF.preload("/scene.gltf");
+useGLTF.preload("/scene1.gltf");

@@ -9,6 +9,7 @@ import { useRef } from "react";
 import { useContext } from "react";
 import { ColorContext } from "./../context/ColorContext";
 import { useEffect } from "react";
+import Model from "../components/Scene";
 
 const Container = styled.div`
   width: 100vw;
@@ -200,11 +201,11 @@ const PricingSection = () => {
         </Phone>
 
         <Details>
-          <SubTitle>iPhone</SubTitle>
-          <Title>14 Pro Max</Title>
+          <SubTitle>Power card</SubTitle>
+          <Title>Powercard (last mins)</Title>
           <SubTitle>From $1099*</SubTitle>
           <ButtonContainer>
-            <Btn>Buy</Btn>
+            <Btn>Pre Order</Btn>
             <BtnLink href="#">Learn More &#x2192;</BtnLink>
           </ButtonContainer>
         </Details>

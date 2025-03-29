@@ -4,7 +4,7 @@ import React from "react";
 import { useLayoutEffect } from "react";
 import { useRef } from "react";
 import styled from "styled-components";
-import v1 from "../assets/video/Scuba Diving - 699.mp4";
+import v1 from "../assets/video/1.mp4";
 import v2 from "../assets/video/Skate - 49791.mp4";
 
 const Section = styled.section`
