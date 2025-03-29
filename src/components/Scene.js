@@ -7,13 +7,12 @@ Source: https://sketchfab.com/3d-models/power-bank-cyber-fa95c65b6cdd4c4d8158cb7
 Title: Power Bank "Cyber"
 */
 
-import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
+import React, {  useLayoutEffect, useState, useEffect } from "react";
 import { useGLTF } from '@react-three/drei'
 import gsap from "gsap";
 import { useThree } from "@react-three/fiber";
 
 export default function Model(props) {
-  const group = useRef();
   const { nodes, materials } = useGLTF('/scene.gltf');
   let camera = useThree((state) => state.camera);
   let scene = useThree((state) => state.scene);

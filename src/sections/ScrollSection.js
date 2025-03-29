@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState } from "react";
+import React, { Suspense, } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import styled from "styled-components";
@@ -31,30 +31,7 @@ const Arrow = styled.div`
   }
 `;
 
-const ShowSection = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: #121212;
-  display: ${({ show }) => (show ? "flex" : "none")};
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 2rem;
-  transition: opacity 0.5s ease-in-out;
-`;
-const StyledModel = styled.div`
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
-  animation: glow 2s infinite alternate;
 
-  @keyframes glow {
-    from {
-      filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
-    }
-    to {
-      filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 1));
-    }
-  }
-`;
 
 const ScrollSection = ({onArrowClick}) => {
 

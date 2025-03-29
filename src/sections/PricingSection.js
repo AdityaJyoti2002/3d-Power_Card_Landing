@@ -5,11 +5,11 @@ import { Suspense } from "react";
 import Model3 from "../components/Scene3";
 import { AdaptiveDpr, AdaptiveEvents, Environment } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import { useContext } from "react";
 import { ColorContext } from "./../context/ColorContext";
 import { useEffect } from "react";
-import Model from "../components/Scene";
 
 const Container = styled.div`
   width: 100vw;
@@ -148,6 +148,12 @@ const PricingSection = () => {
     changeColorContext(colorObj);
   };
 
+  const Controls = () => {
+    const { camera, gl } = useThree(); // useThree se camera aur renderer le rahe hain
+  
+    return <OrbitControls args={[camera, gl.domElement]} enableZoom={false} />;
+  };
+
   return (
     <Container>
       <Section ref={sectionRef}>
@@ -163,7 +169,7 @@ const PricingSection = () => {
             <Environment preset="night" />
             <AdaptiveDpr pixelated />
             <AdaptiveEvents />
-            <OrbitControls enableZoom={false} />
+            <Controls/>
           </Canvas>
 
           <Colors>
