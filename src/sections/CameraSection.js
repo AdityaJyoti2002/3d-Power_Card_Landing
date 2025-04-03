@@ -5,7 +5,6 @@ import { useLayoutEffect } from "react";
 import { useRef } from "react";
 import styled from "styled-components";
 import v1 from "../assets/video/1.mp4";
-import v2 from "../assets/video/Skate - 49791.mp4";
 
 const Section = styled.section`
   width: 100vw;
@@ -27,21 +26,6 @@ const V1 = styled.video`
   z-index: 2;
 `;
 
-const V2 = styled.video`
-  position: absolute;
-  top: 0;
-  right: 40%;
-  width: 60%;
-  height: 1auto;
-
-  z-index: 1;
-
-  @media screen and (max-width: 30em) {
-    width: 100%;
-    right: 0;
-    top: 10%;
-  }
-`;
 
 const TitleContainer = styled.div`
   width: 50%;
@@ -97,6 +81,7 @@ const CameraSection = () => {
   let elements = gsap.utils.selector(titleRef);
 
   useLayoutEffect(() => {
+    console.log("CameraSection mounted");
     const Elem = sectionRef.current;
     const video1Elem = videoRef1.current;
     const video2Elem = videoRef2.current;
@@ -147,14 +132,18 @@ const CameraSection = () => {
     );
 
     return () => {
-      if (t2) t2.kill();
+      console.log("Cleaning up GSAP timeline");
+      if (t2) {
+        t2.kill(); // Kill the timeline
+      }
+      console.log("CameraSection unmounted");
     };
   }, []);
 
   return (
     <Section ref={sectionRef}>
       <V1 ref={videoRef1} src={v1} type="video/mp4" autoPlay muted loop />
-      <V2 ref={videoRef2} src={v2} type="video/mp4" autoPlay muted loop />
+     
       <TitleContainer ref={titleRef}>
         <Title>Ready.</Title>
         <Title>Steady.</Title>

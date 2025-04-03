@@ -5,7 +5,6 @@ import { Suspense } from "react";
 import Model3 from "../components/Scene3";
 import { AdaptiveDpr, AdaptiveEvents, Environment } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import { useContext } from "react";
 import { ColorContext } from "./../context/ColorContext";
@@ -21,12 +20,11 @@ const Container = styled.div`
   overflow: hidden;
 `;
 const Section = styled.div`
-  width: 100vw;
+   width: 100vw;
   height: 100vh;
   position: relative;
   z-index: 1;
-
-  background-color: "#9BB5CE";
+  background-color: #9BB5CE;
 `;
 const Phone = styled.div`
   width: 100%;
@@ -41,34 +39,6 @@ const Phone = styled.div`
   cursor: grab;
 `;
 
-const Colors = styled.ul`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  position: absolute;
-  left: 35%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  @media screen and (max-width: 64em) {
-    left: 10%;
-  }
-`;
-
-const Color = styled.li`
-  list-style: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  cursor: pointer;
-
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-  margin: 0.5rem 0;
-
-  border: 1px solid var(--dark);
-`;
 const Details = styled.div`
   width: 100%;
   display: flex;
@@ -98,6 +68,7 @@ const Btn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 24px;
 
   margin: 0;
   padding: 0.4rem 1rem;
@@ -114,15 +85,6 @@ const Btn = styled.button`
     opacity: 0.7;
   }
 `;
-const BtnLink = styled.a`
-  color: var(--blue);
-  text-decoration: none;
-  margin-left: 1.5rem;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
 
 const IndicatorText = styled.div`
   font-size: var(--fontsm);
@@ -132,91 +94,45 @@ const IndicatorText = styled.div`
 
 const PricingSection = () => {
   const sectionRef = useRef(null);
-
-  const { currentColor, changeColorContext } = useContext(ColorContext);
+  const { currentColor } = useContext(ColorContext);
 
   useEffect(() => {
-    sectionRef.current.style.backgroundColor = `rgba(${currentColor.rgbColor},0.4)`;
+    if (sectionRef.current) {
+      sectionRef.current.style.backgroundColor = `rgba(${currentColor.rgbColor},0.4)`;
+    }
   }, [currentColor]);
-
-  let updateColor = (color, text, rgbColor) => {
-    const colorObj = {
-      color,
-      text,
-      rgbColor,
-    };
-    changeColorContext(colorObj);
-  };
-
-  const Controls = () => {
-    const { camera, gl } = useThree(); // useThree se camera aur renderer le rahe hain
-  
-    return <OrbitControls args={[camera, gl.domElement]} enableZoom={false} />;
-  };
 
   return (
     <Container>
-      <Section ref={sectionRef}>
-        <Phone>
-          <IndicatorText>360&deg; &#x27F2; </IndicatorText>
-          <Canvas camera={{ fov: 14 }}>
-            <ambientLight intensity={1} />
-            <directionalLight intensity={0.4} />
-            <Suspense fallback={null}>
-              <Model3 />
-            </Suspense>
-
-            <Environment preset="night" />
-            <AdaptiveDpr pixelated />
-            <AdaptiveEvents />
-            <Controls/>
-          </Canvas>
-
-          <Colors>
-            <Color
-              color="#9BB5CE"
-              onClick={() =>
-                updateColor("#9BB5CE", "Sierra Blue", "155, 181, 206")
-              }
-            />
-            <Color
-              color="#F9E5C9"
-              onClick={() => updateColor("#F9E5C9", "Gold", "249, 229, 201")}
-            />
-            <Color
-              color="#505F4E"
-              onClick={() =>
-                updateColor("#505F4E", "Alpine Green", "80, 95, 78")
-              }
-            />
-            <Color
-              color="#574f6f"
-              onClick={() =>
-                updateColor("#574f6f", "Deep Purple", "87, 79, 111")
-              }
-            />
-            <Color
-              color="#A50011"
-              onClick={() => updateColor("#A50011", "Red", "165, 0, 17")}
-            />
-            <Color
-              color="#215E7C"
-              onClick={() => updateColor("#215E7C", "Blue", "33, 94, 124")}
-            />
-          </Colors>
-        </Phone>
-
-        <Details>
-          <SubTitle>Power card</SubTitle>
-          <Title>Powercard (last mins)</Title>
-          <SubTitle>From $1099*</SubTitle>
-          <ButtonContainer>
-            <Btn>Pre Order</Btn>
-            <BtnLink href="#">Learn More &#x2192;</BtnLink>
-          </ButtonContainer>
-        </Details>
-      </Section>
-    </Container>
+        <Section ref={sectionRef}>
+          <Phone>
+            <IndicatorText>360&deg; &#x27F2; </IndicatorText>
+            <Canvas camera={{ fov: 14 }}>
+              <ambientLight intensity={1} />
+              <directionalLight intensity={0.4} />
+              <Suspense fallback={null}>
+                <group>
+                  <Model3 rotation={[0, Math.PI / 2, 0]} />
+                </group>
+              </Suspense>
+              <Environment preset="night" />
+              <AdaptiveDpr pixelated />
+              <AdaptiveEvents />
+              <OrbitControls />
+            </Canvas>
+          </Phone>
+          <Details>
+            <SubTitle>Power card</SubTitle>
+            <Title>Powercard (last minute)</Title>
+            <SubTitle>From ₹180</SubTitle>
+            <ButtonContainer>
+                <a href="/form" style={{ textDecoration: "none" }}>
+                  <Btn>Pre Order</Btn>
+                </a>
+            </ButtonContainer>
+          </Details>
+        </Section>
+        </Container>
   );
 };
 

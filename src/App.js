@@ -11,36 +11,52 @@ import CameraSection from "./sections/CameraSection";
 import PricingSection from "./sections/PricingSection";
 import { ColorContextProvider } from "./context/ColorContext";
 import ScrollSection from "./sections/ScrollSection";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PreOrderForm from "./pages/PreorderForm/Form";
+import Dashboard from "./pages/AdminDashboard/Dashboard";
+import Signup from "./pages/Registration/Signup";
+import Login from "./pages/Registration/Login";
 
 function App() {
   const [showFullContent, setShowFullContent] = useState(false);
 
   const handleScroll = () => {
+    console.log("Scroll detected, showing full content");
     setShowFullContent(true);
   };
+  console.log("Current showFullContent:", showFullContent);
+
+
   return (
-    <>
-     {!showFullContent ? (
-        <ScrollSection onArrowClick={handleScroll} />
-      ) : (
-        <>
-    
-    {/* <ScrollSection/> */}
+    <Router>
       <GlobalStyle />
-      <Quote />
-      <PhoneModel />
-      <HeroSection />
-      <DesignSection />
-      <DisplaySection />
-      <ProcessorSection />
-      <BatterySection />
-      <ColorContextProvider>
-        <CameraSection />
-        <PricingSection />
-      </ColorContextProvider>
-      </>
-      )}
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={!showFullContent ? (
+            <ScrollSection onArrowClick={handleScroll} />
+          ) : (
+            <>
+              <Quote />
+              <PhoneModel />
+              <HeroSection />
+              <DesignSection />
+              <DisplaySection />
+              <ProcessorSection />
+              <BatterySection />
+              <ColorContextProvider>
+                <CameraSection />
+                <PricingSection />
+              </ColorContextProvider>
+            </>
+          )}
+        />
+        <Route path="/form" element={<PreOrderForm/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,8 +1,6 @@
-import React, { Suspense, } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import React from "react";
 import styled from "styled-components";
-import Model from "../components/Scene";
+import v1 from "../assets/video/1.mp4";
 
 const Container = styled.div`
   width: 100vw;
@@ -31,25 +29,23 @@ const Arrow = styled.div`
   }
 `;
 
+const VideoContainer = styled.video`
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100vh; /* Prevent the video from exceeding the viewport height */
+  object-fit: cover; /* Ensures the video covers the container */
+  
+  
+`;
 
-
-const ScrollSection = ({onArrowClick}) => {
-
+const ScrollSection = ({ onArrowClick }) => {
   return (
-    <>
-      <Container>
-        <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-          <ambientLight intensity={1.5} />
-          <directionalLight position={[2, -1, 5]} intensity={2} />
-          <Suspense fallback={null}>
-              <Model scale={2} position={[0, -0.6, 0]} />
-          </Suspense>
-          <Environment preset="sunset" />
-          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.5} />
-        </Canvas>
-        <Arrow onClick={onArrowClick}>⬇</Arrow>
-      </Container>
-    </>
+    <Container>
+      <VideoContainer autoPlay loop muted>
+        <source src={v1} type="video/mp4" />
+      </VideoContainer>
+      <Arrow onClick={onArrowClick}>⬇</Arrow>
+    </Container>
   );
 };
 

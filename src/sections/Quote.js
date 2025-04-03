@@ -102,27 +102,27 @@ const Quote = () => {
       <TextContainer>
         <Text delay="0s">
           {" "}
-          <span>&#8220; You can't connect the dots looking forward;</span>{" "}
+          <span>Say goodbye to bulky power banks! PowerCard is your ultra-slim, affordable, and eco-friendly</span>{" "}
         </Text>
         <Text delay="0.4s">
           {" "}
           <span>
-            &nbsp;&nbsp;&nbsp;you can only connect them looking backward.
+          emergency charging solution. Designed for efficiency and portability, it delivers quick power when
           </span>{" "}
         </Text>
         <Text delay="0.8s">
           {" "}
-          <span>&nbsp;&nbsp;&nbsp;so you have to trust that the dots</span>{" "}
+          <span>you need it most—without the high price tag.</span>{" "}
         </Text>
         <Text delay="1.2s">
           {" "}
           <span>
-            &nbsp;&nbsp;&nbsp;will somehow connect in your future. &#8221;
+          Ultra-Portable & Lightweight | Smart Power Management | Affordable & Reliable
           </span>{" "}
         </Text>
         <Text delay="1.6s">
           {" "}
-          <span className="author">&#x23AF; Steve Jobs</span>{" "}
+          <span className="author">&#x23AF; BY LAST MINUTES</span>{" "}
         </Text>
       </TextContainer>
     </Section>

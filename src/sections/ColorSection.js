@@ -72,6 +72,7 @@ const ColorSection = () => {
   const { currentColor, changeColorContext } = useContext(ColorContext);
 
   useEffect(() => {
+    console.log("ColorSection mounted");
     let rightElem = rightRef.current;
     let leftElem = leftRef.current;
     let textElem = textRef.current;
@@ -84,6 +85,7 @@ const ColorSection = () => {
   }, [currentColor]);
 
   useLayoutEffect(() => {
+    console.log("ColorSection layout effect running");
     let Elem = sectionRef.current;
 
     let updateColor = (color, text, rgbColor) => {
@@ -106,7 +108,7 @@ const ColorSection = () => {
         pinSpacing: true,
       },
     });
-
+    console.log("Creating GSAP timeline");
     let t2 = gsap
       .timeline({
         scrollTrigger: {
@@ -153,10 +155,14 @@ const ColorSection = () => {
         onReverseCompleteParams: ["#215E7C", "Blue", "33, 94, 124"],
       });
 
-    return () => {
-      if (t2) t2.kill();
-    };
-  }, []);
+      return () => {
+        console.log("Cleaning up GSAP timeline");
+        if (t2) {
+          t2.kill(); // Kill the timeline
+        }
+        console.log("ColorSection unmounted");
+      };
+    }, []);
 
   return (
     <Section ref={sectionRef}>

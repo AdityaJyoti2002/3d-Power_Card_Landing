@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import gsap from "gsap";
 import React from "react";
 import { useLayoutEffect } from "react";
@@ -35,7 +34,7 @@ const Section = styled.section`
   }
 `;
 const MainTitle = styled.h1`
-  font-size: var(--fontBig);
+  font-size: 15px;
   font-family: var(--fontL);
 
   background-image: linear-gradient(-45deg, var(--gradient));
@@ -156,26 +155,32 @@ const DisplaySection = () => {
   return (
     <Section>
       <MainTitle>
-        Immersive <br /> Display
+        Ultra Slim, <br />Rechargeable PowerCard
       </MainTitle>
       <TextBlockRight>
-        <Title>Super Ratine XDR Display</Title>
+        <Title>Ultra PowerCard</Title>
         <Text>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Necessitatibus dignissimos ipsam.
+        A sleek, pocket-sized power
+solution that provides instant
+charge, eliminating battery
+anxiety and bulky power banks.
         </Text>
       </TextBlockRight>
       <TextBlockLeft ref={container}>
-        <Title>Big is better</Title>
+        <Title>Smart Digital
+Networking & Branding</Title>
         <Text>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Necessitatibus dignissimos ipsam.
+        Smart Digital Networking & Branding
+PowerCards that store & share digital
+business profiles, replacing traditional
+cards with an eco-friendly, tech-
+integrated alternative.
         </Text>
       </TextBlockLeft>
 
       <TextContainer>
-        <MovingText ref={textOne}>Tougher then ever!</MovingText>
-        <MovingText ref={textTwo}>Every touch matters.</MovingText>
+        <MovingText ref={textOne}>Eco-friendly materials</MovingText>
+        <MovingText ref={textTwo}>Ultra-thin & rechargeable</MovingText>
       </TextContainer>
     </Section>
   );

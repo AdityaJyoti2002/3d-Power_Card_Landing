@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import a15 from "../assets/Images/A15-Bionic.jpg";
 
 const Section = styled.section`
   width: 100vw;
@@ -116,21 +115,16 @@ const Text = styled.div`
 const ProcessorSection = () => {
   return (
     <Section>
-      <Title>Fastest Processor</Title>
+      <Title>Power On, Anytime, Anywhere!</Title>
       <Processor>
-        <img src={a15} alt="A15 processor" />
+        <img src="https://5.imimg.com/data5/ECOM/Default/2023/3/294091309/GT/SZ/AM/137491030/elc5077-55-1000x1000.png" alt="A15 processor" />
       </Processor>
       <Text>
         <span>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Reprehenderit numquam quae nisi, dolore cum voluptatem cumque quo sit,
-          consequuntur necessitatibus iste fuga assumenda deserunt aut omnis,
-          quaerat aliquid optio veniam.
+        Every year, 150M+ new smartphones are sold in India, and with an average daily battery consumption of 3,500-5,000mAh, users often face battery drain at the worst moments. Whether you're a frequent traveler, student, or corporate employee, staying powered up is essential.
         </span>
         <span>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Reprehenderit numquam quae nisi, dolore cum voluptatem cumque quo sit,
-          consequuntur necessitatibus iste fuga assumenda deserunt aut.
+        That's why our portable emergency charging solution is designed to give you an instant power boost of 1,500mAh–2,000mAh, ensuring your phone stays on when you need it most. Whether you're stuck in traffic, attending an important meeting, or traveling long distances, our compact charger is your lifesaver in critical moments.
         </span>
       </Text>
     </Section>
