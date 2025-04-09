@@ -112,7 +112,7 @@ const PricingSection = () => {
               <directionalLight intensity={0.4} />
               <Suspense fallback={null}>
                 <group>
-                  <Model3 rotation={[0, Math.PI / 5, 0]} scale={4} position={[0, -0.4, 0]}/>
+                  <Model3 rotation={[0, Math.PI / 5, 0]} scale={10} position={[0, -0.5, 0]}/>
                 </group>
               </Suspense>
               <Environment preset="night" />
