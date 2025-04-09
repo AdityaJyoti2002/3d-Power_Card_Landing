@@ -15,7 +15,7 @@ import { ColorContext } from "../context/ColorContext";
 export default function Model3({ ...props }) {
   const { currentColor } = useContext(ColorContext);
   const group = useRef();
-  const { nodes, materials } = useGLTF("/powercard.gltf");
+  const { nodes, materials } = useGLTF("/powercard.compressed.gltf");
 
   let camera = useThree((state) => state.camera);
 
@@ -37,32 +37,24 @@ export default function Model3({ ...props }) {
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <group scale={10}>
-          <mesh geometry={nodes.Plane.geometry} material={materials['Clean silver(Shiny Metal)0']}>
+          <mesh geometry={nodes.Plane.geometry} material={materials['Clean silver(Shiny Metal)0']} />
       <mesh geometry={nodes.Plane_1.geometry} material={materials['Plain Grey Flat1']} />
-    </mesh>
-    <mesh geometry={nodes.Plane001.geometry} material={materials['Clean silver(Shiny Metal)0']}>
-      <mesh geometry={nodes.Plane001_1.geometry} material={materials['Plain Grey Flat1']} />
-    </mesh>
-    <mesh geometry={nodes.Cube004.geometry} material={materials['Aluminium sand4']} />
-    <mesh geometry={nodes.Plane002.geometry} material={materials['Soft Black Fabric5']}>
+      <mesh geometry={nodes.Plane001.geometry} material={materials['Plain Grey Flat1']} />
+      <mesh geometry={nodes.Cube004.geometry} material={materials['Aluminium sand4']} />
+      <mesh geometry={nodes.Plane002.geometry} material={materials['Soft Black Fabric5']} />
       <mesh geometry={nodes.Cylinder001.geometry} material={materials['Clean silver(Shiny Metal)0']} />
-    </mesh>
-    <mesh geometry={nodes.Plane005.geometry} material={materials['Material.0066']} />
-    <mesh geometry={nodes.Plane008.geometry} material={materials['Material.0057']} />
-    <mesh geometry={nodes.BY_LAST_MINUTES.geometry} material={materials['BY LAST MINUTES8']} />
-    <mesh geometry={nodes.Cube003.geometry} material={materials['Plástico fosco 19']}>
+      <mesh geometry={nodes.Plane005.geometry} material={materials['Material.0066']} />
+      <mesh geometry={nodes.Plane008.geometry} material={materials['Material.0057']} />
+      <mesh geometry={nodes.BY_LAST_MINUTES.geometry} material={materials['BY LAST MINUTES8']} />
+      <mesh geometry={nodes.Cube003.geometry} material={materials['Plástico fosco 19']} />
       <mesh geometry={nodes.Cube003_1.geometry} material={materials['Metal ouro10']} />
-    </mesh>
-    <mesh geometry={nodes.Cube002.geometry} material={materials['Plástico fosco 19']} />
-    <mesh geometry={nodes.Cube.geometry} material={materials.Aluminum11} />
-    <mesh geometry={nodes['5v_Bluetooth_Module'].geometry} material={materials['Black Coating12']}>
+      <mesh geometry={nodes.Cube.geometry} material={materials.Aluminum11} />
+      <mesh geometry={nodes['5v_Bluetooth_Module'].geometry} material={materials['Black Coating12']} />
       <mesh geometry={nodes['5v_Bluetooth_Module_1'].geometry} material={materials.Metal13} />
       <mesh geometry={nodes['5v_Bluetooth_Module_2'].geometry} material={materials['PCB Top.00114']} />
-      <mesh geometry={nodes['5v_Bluetooth_Module_3'].geometry} material={materials.Capacitors15} />
+      <mesh geometry={nodes['5v_Bluetooth_Module_3'].geometry} material={materials['Black Coating12']} />
       <mesh geometry={nodes['5v_Bluetooth_Module_4'].geometry} material={materials['PCB Side16']} />
-      <mesh geometry={nodes['5v_Bluetooth_Module_5'].geometry} material={materials['Metal.00117']} />
-      <mesh geometry={nodes['5v_Bluetooth_Module_6'].geometry} material={materials['Material.0057']} />
-    </mesh>
+      <mesh geometry={nodes['5v_Bluetooth_Module_5'].geometry} material={materials['Material.0057']} />
           </group>
         </group>
       </group>
@@ -70,4 +62,4 @@ export default function Model3({ ...props }) {
   );
 }
 
-useGLTF.preload("/powercard.gltf");
+useGLTF.preload("/powercard.compressed.gltf");

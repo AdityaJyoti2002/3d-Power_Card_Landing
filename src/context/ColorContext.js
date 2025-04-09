@@ -8,7 +8,7 @@ export const ColorContext = createContext({});
 
 
 export const ColorContextProvider = ({children}) => {
-    const { materials } = useGLTF("/powercard.gltf");
+    const { materials } = useGLTF("/powercard.compressed.gltf");
     const [currentColor, serCurrentColor] = useState({
         color:"#9BB5CE",
         text:"Sierra Blue",

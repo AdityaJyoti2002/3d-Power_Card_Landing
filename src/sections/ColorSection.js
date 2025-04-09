@@ -9,7 +9,6 @@ import Model2 from "../components/Scene2";
 import { useContext } from "react";
 import { ColorContext } from "./../context/ColorContext";
 import { useEffect } from "react";
-import Model from "../components/Scene";
 
 const Section = styled.section`
   width: 100vw;
