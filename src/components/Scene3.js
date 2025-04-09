@@ -36,11 +36,7 @@ export default function Model3({ ...props }) {
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-<<<<<<< HEAD
           <group scale={10}>
-=======
-          <group scale={2}>
->>>>>>> 8aca999 (new  3D model2)
           <mesh geometry={nodes.Plane.geometry} material={materials['Clean silver(Shiny Metal)0']} />
       <mesh geometry={nodes.Plane_1.geometry} material={materials['Plain Grey Flat1']} />
       <mesh geometry={nodes.Plane001.geometry} material={materials['Plain Grey Flat1']} />
@@ -59,7 +55,7 @@ export default function Model3({ ...props }) {
       <mesh geometry={nodes['5v_Bluetooth_Module_3'].geometry} material={materials['Black Coating12']} />
       <mesh geometry={nodes['5v_Bluetooth_Module_4'].geometry} material={materials['PCB Side16']} />
       <mesh geometry={nodes['5v_Bluetooth_Module_5'].geometry} material={materials['Material.0057']} />
-          </group>
+      </group>
         </group>
       </group>
     </group>
