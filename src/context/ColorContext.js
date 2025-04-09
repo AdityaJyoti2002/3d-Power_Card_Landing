@@ -17,7 +17,11 @@ export const ColorContextProvider = ({children}) => {
 
     let changeColorContext = (colorObj) => {
 
-        // materials.Body.color.set(colorObj.color);
+        if (materials && materials.Body && materials.Body.color) {
+            materials.Body.color.set(colorObj.color);
+        } else {
+            console.warn("Materials not loaded yet!");
+        }
         serCurrentColor(colorObj)
       }
 
