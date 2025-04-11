@@ -45,6 +45,8 @@ const Details = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+    top: -24px;
 `;
 
 const Title = styled.h2`

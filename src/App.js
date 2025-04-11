@@ -15,6 +15,9 @@ import Dashboard from "./pages/AdminDashboard/Dashboard";
 import Signup from "./pages/Registration/Signup";
 import Login from "./pages/Registration/Login";
 import CameraSection1 from "./sections/CameraSection1";
+import Footer from "./components/Footer/footer";
+import "./index.css"
+import Narbar from "./components/Navbar/narbar";
 
 function App() {
 
@@ -23,11 +26,13 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
+      
       <Routes>
         <Route
           path="/"
           element={ (
             <>
+            <Narbar/>
               <Quote />
               <PhoneModel />
               <HeroSection />
@@ -40,8 +45,10 @@ function App() {
                 <CameraSection1/>
                 <PricingSection />
               </ColorContextProvider>
+              <Footer/>
             </>
           )}
+          
         />
         <Route path="/form" element={<PreOrderForm/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
