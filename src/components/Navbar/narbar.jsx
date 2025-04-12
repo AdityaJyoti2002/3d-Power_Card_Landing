@@ -23,7 +23,7 @@ const Narbar = () => {
           <a href="/" class="block py-2 px-3 md:p-0 text-blue-700 dark:text-blue-500 font-semibold" aria-current="page">Home</a>
         </li>
         <li>
-          <a href="/" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">About</a>
+          <a href="/Aboutus" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">About</a>
         </li>
         <li>
           <a href="/" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">Services</a>

@@ -18,6 +18,9 @@ import CameraSection1 from "./sections/CameraSection1";
 import Footer from "./components/Footer/footer";
 import "./index.css"
 import Narbar from "./components/Navbar/narbar";
+import About from "./pages/About/About";
+import ComfirmOrder from "./components/confirm/ComfirmOrder";
+import ComparProtuct from "./pages/Comparition/Comparprotuct";
 
 function App() {
 
@@ -45,6 +48,7 @@ function App() {
                 <CameraSection1/>
                 <PricingSection />
               </ColorContextProvider>
+              <ComparProtuct/>
               <Footer/>
             </>
           )}
@@ -54,6 +58,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/Aboutus" element={<About/>}/>
+        <Route path="/OrderConfirm" element={<ComfirmOrder/>}/>
       </Routes>
     </Router>
   );

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -10,7 +11,6 @@ const Container = styled.div`
   justify-content: center;
   /* height: 100vh;x */
   background: linear-gradient(to right, #e0f7fa, #80deea);
-  /* Or use an image */
   
 `;
 
@@ -45,14 +45,9 @@ const Label = styled.label`
   font-size: 14px;
 `;
 
-// const Input = styled.input`
-//   flex: 2;
-//   padding: 8px;
-//   border: 1px solid #ddd;
-//   border-radius: 4px;
-// `;
 const Input = styled.input`
   flex: 2;
+  color: black;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -71,6 +66,7 @@ const TextArea = styled.textarea`
   border: 1px solid #ddd;
   border-radius: 8px;
   transition: border-color 0.3s ease;
+  color: black;
   
   &:focus {
     border-color: #007bff;
@@ -92,20 +88,6 @@ const ButtonGroup = styled.div`
   margin-top: 20px;
 `;
 
-// const Button = styled.button`
-//   flex: 1;
-//   padding: 10px;
-//   border: none;
-//   cursor: pointer;
-//   font-size: 16px;
-//   border-radius: 4px;
-//   margin: 0 5px;
-//   background: ${(props) => (props.primary ? "#007bff" : "#ffc107")};
-//   color: ${(props) => (props.primary ? "white" : "black")};
-//   &:hover {
-//     opacity: 0.8;
-//   }
-// `;
 const Button = styled.button`
   flex: 1;
   padding: 10px;
@@ -125,6 +107,8 @@ const Button = styled.button`
 `;
 
 const Preorder = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     companyName: "",
     companyDescription: "",
@@ -157,6 +141,7 @@ const Preorder = () => {
     try {
       await addDoc(collection(db, "preorders"), formData);
       alert("Preorder submitted successfully!");
+      navigate('/OrderConfirm');
     } catch (error) {
       console.error("Error submitting preorder: ", error);
       alert("Failed to submit preorder. Try again later.");
