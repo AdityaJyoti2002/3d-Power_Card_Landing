@@ -46,7 +46,7 @@ const Details = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-    top: -24px;
+  top: -80px;
 `;
 
 const Title = styled.h2`

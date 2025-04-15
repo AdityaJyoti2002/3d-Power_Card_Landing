@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Narbar = () => {
+const Narbar2 = () => {
   return (
 <nav class="fixed top-0 left-0 w-full bg-transparent border-gray-200 dark:bg-transparent z-50 backdrop-blur-md">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -26,10 +26,10 @@ const Narbar = () => {
           <a href="/Aboutus" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">About</a>
         </li>
         <li>
-          <a href="/signup" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">Login/signup</a>
+          <a href="/" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">Services</a>
         </li>
         <li>
-          <a href="/" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">Order</a>
+          <a href="/" class="block py-2 px-3 md:p-0 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-400">Contact</a>
         </li>
       </ul>
     </div>
@@ -40,4 +40,4 @@ const Narbar = () => {
   )
 }
 
-export default Narbar
+export default Narbar2

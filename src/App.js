@@ -20,7 +20,6 @@ import "./index.css"
 import Narbar from "./components/Navbar/narbar";
 import About from "./pages/About/About";
 import ComfirmOrder from "./components/confirm/ComfirmOrder";
-import ComparProtuct from "./pages/Comparition/Comparprotuct";
 
 function App() {
 
@@ -29,7 +28,6 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
-      
       <Routes>
         <Route
           path="/"
@@ -48,7 +46,6 @@ function App() {
                 <CameraSection1/>
                 <PricingSection />
               </ColorContextProvider>
-              <ComparProtuct/>
               <Footer/>
             </>
           )}

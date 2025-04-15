@@ -2,6 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
+    <>
     <section class="py-24 relative xl:mr-0 lg:mr-5 mr-0">
     <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
         <div class="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
@@ -12,12 +13,16 @@ const About = () => {
                         <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                             <h2
                                 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
-                                The Tale of Our Achievement Story</h2>
+                             Our Achievement Story</h2>
                             <p
                                 class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
-                                Our achievement story is a testament to teamwork and perseverance. Together, we've
-                                overcome challenges, celebrated victories, and created a narrative of progress and
-                                success.</p>
+                                PowerCard was born from a simple frustration: being caught with a dead phone battery during important business meetings. Our founder, Alex Johnson, was tired of carrying bulky power banks and tangled cables.
+
+The idea was simple but revolutionary: What if your business card could also charge your phone? After two years of intensive development and countless prototypes, PowerCard became a reality.
+
+Today, PowerCard combines cutting-edge battery technology with elegant, minimalist design to create the world's thinnest portable charger that fits perfectly in your wallet alongside your credit cards.
+
+We're proud to say that PowerCard has already helped thousands of professionals stay connected when it matters most, and we're just getting started..</p>
                         </div>
                     </div>
                     <div class="w-full flex-col justify-center items-start gap-6 flex">
@@ -53,17 +58,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <button
-                    class="sm:w-fit w-full group px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
-                    <span
-                        class="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">Read
-                        More</span>
-                    <svg class="group-hover:translate-x-0.5 transition-all duration-700 ease-in-out"
-                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+                
             </div>
             <div class="w-full lg:justify-start justify-center items-start flex">
                 <div
@@ -74,7 +69,7 @@ const About = () => {
         </div>
     </div>
 </section>
-                                        
+          </>                              
   )
 }
 
